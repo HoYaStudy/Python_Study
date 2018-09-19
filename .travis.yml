@@ -14,3 +14,8 @@ script:
   - cd test
   - python3 Test_unittest.py
   - python3 Test_doctest.py
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
