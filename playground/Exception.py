@@ -43,4 +43,3 @@ if __name__ == '__main__':
     for c in testList:
         if c.isupper():
             raise userException(c)
-
