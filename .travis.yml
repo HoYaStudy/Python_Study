@@ -1,7 +1,11 @@
+sudo: true
+
 language: python
 
 python:
   - "3.7"
+
+dist: xenial  # for python 3.7
 
 install:
   - pip install -r requirements.txt
