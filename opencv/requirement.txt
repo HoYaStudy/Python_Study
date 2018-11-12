@@ -2,3 +2,4 @@ autopep8
 pylint
 jupyter
 opencv-python
+matplotlib
