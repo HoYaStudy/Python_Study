@@ -1,9 +1,23 @@
 {
 	"python.autoComplete.addBrackets": true,
+	"python.formatting.autopep8Args": [
+		"--max-line-length", "120"
+	],
 	"python.linting.enabled": true,
+	"python.linting.pep8Args": [
+		"--ignore=E303"
+	],
 	"python.linting.pep8Enabled": true,
 	"python.linting.pylintEnabled": false,
 	"python.pythonPath": "C:\\Python37\\python.exe",
+	"python.unitTest.nosetestsEnabled": false,
+	"python.unitTest.pyTestEnabled": false,
 	"python.unitTest.unittestEnabled": true,
-	"python.venvPath": "${workspaceFolder}/venv"
+	"python.venvFolders": [
+		"venv"
+	],
+	"python.venvPath": "${workspaceFolder}/venv",
+	"[python]": {
+		"editor.formatOnSave": true
+	}
 }
