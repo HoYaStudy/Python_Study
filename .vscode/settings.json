@@ -1,4 +1,5 @@
 {
+	"editor.fontFamily": "'D2Coding ligature', D2Coding, Menlo, consolas, Monaco, 'Courier New', monospace",
 	"python.autoComplete.addBrackets": true,
 	"python.formatting.autopep8Args": [
 		"--max-line-length", "120"
