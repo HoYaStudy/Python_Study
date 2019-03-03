@@ -8,3 +8,5 @@ HoYa's Python Playground.
 
 * [pyenv](docs/pyenv.md)
 * [venv](docs/venv.md)
+* [pip](docs/pip.md)
+* [jupyter](docs/jupyter.md)

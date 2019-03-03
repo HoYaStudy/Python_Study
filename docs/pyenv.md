@@ -4,20 +4,34 @@ Python의 version 관리를 도와주는 tool이다.
 
 ## Installation
 
-### on MAC
-
-> $ brew install pyenv
+'''sh
+# on MAC
+$ brew install pyenv
+'''
 
 ## Usage
 
 ### Show available list
 
-> $ pyenv install -l
+'''sh
+$ pyenv install -l
+'''
 
-### Install specific version of python
+### Install specific version
 
-> $ pyenv install \<version>
+'''sh
+$ pyenv install \<version>
+'''
 
-### 특정 folder에서만 특정 python의 version을 사용
+### Show installed list
 
-> $ pyenv local \<version>
+'''sh
+$ pyenv versions
+'''
+
+### 특정 folder에서만 특정 version을 사용
+
+'''sh
+$ pyenv local \<version>
+$ eval "$(pyenv init -)"
+'''

@@ -6,18 +6,22 @@
 
 ### Create
 
-> $ python3 -m venv <dir_name>
+'''sh
+$ python3 -m venv <dir_name>
+'''
 
 ### Activate
 
-#### on MAC or Linux
+'''sh
+# on MAC or Linux
+$ source ./<dir_name>/bin/activate
 
-> $ source ./<dir_name>/bin/activate
-
-#### on Windows
-
-> $ .\<dir_name>\Scripts\activate
+# on Windows
+$ .\<dir_name>\Scripts\activate
+'''
 
 ### Deactivate
 
-> $ deactivate
+'''sh
+$ deactivate
+'''
