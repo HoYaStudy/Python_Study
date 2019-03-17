@@ -10,3 +10,4 @@ HoYa's Python Playground.
 * [venv](docs/venv.md)
 * [pip](docs/pip.md)
 * [jupyter](docs/jupyter.md)
+* [pyqt](docs/pyqt.md)
