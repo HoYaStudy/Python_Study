@@ -1,10 +1,10 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QToolTip
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QToolTip
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QIcon, QFont
 
 
-class MyApp(QWidget):
+class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
@@ -25,6 +25,8 @@ class MyApp(QWidget):
         btn.resize(btn.sizeHint())
         btn.setToolTip('This is a <b>QPushButton</b> widget')
         btn.clicked.connect(QCoreApplication.instance().quit)
+
+        self.statusBar().showMessage('Ready')
 
         self.show()
 
