@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QToolTip
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QToolTip, QAction, qApp
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QIcon, QFont
 
@@ -17,8 +17,18 @@ class MyApp(QMainWindow):
         # self.resize(400, 200)
         self.setGeometry(300, 300, 400, 200)
 
+        exitAction = QAction(QIcon('exit.png'), 'Exit', self)
+        exitAction.setShortcut('Ctrl+Q')
+        exitAction.setStatusTip('Exit application')
+        exitAction.triggered.connect(qApp.quit)
+
         QToolTip.setFont(QFont('Consolas', 10))
         self.setToolTip('This is a <b>QWidget</b> widget')
+
+        menubar = self.menuBar()
+        menubar.setNativeMenuBar(False)
+        fileMenu = menubar.addMenu('&File')
+        fileMenu.addAction(exitAction)
 
         btn = QPushButton('Quit', self)
         btn.move(50, 50)
