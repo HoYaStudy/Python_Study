@@ -15,7 +15,7 @@ class MyApp(QMainWindow):
         self.setWindowIcon(QIcon('terminal.png'))
         # self.move(300, 300)
         # self.resize(400, 200)
-        self.setGeometry(300, 300, 400, 200)
+        self.setGeometry(300, 400, 400, 200)
 
         exitAction = QAction(QIcon('exit.png'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q')
@@ -30,8 +30,11 @@ class MyApp(QMainWindow):
         fileMenu = menubar.addMenu('&File')
         fileMenu.addAction(exitAction)
 
+        self.toolbar = self.addToolBar('Exit')
+        self.toolbar.addAction(exitAction)
+
         btn = QPushButton('Quit', self)
-        btn.move(50, 50)
+        btn.move(50, 100)
         btn.resize(btn.sizeHint())
         btn.setToolTip('This is a <b>QPushButton</b> widget')
         btn.clicked.connect(QCoreApplication.instance().quit)
