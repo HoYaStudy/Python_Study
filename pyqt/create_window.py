@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QToolTip, QAction, qApp
+from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QDesktopWidget, QPushButton, QToolTip, QAction, qApp
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QIcon, QFont
 
@@ -14,8 +14,9 @@ class MyApp(QMainWindow):
         self.setWindowTitle("My First Application")
         self.setWindowIcon(QIcon('terminal.png'))
         # self.move(300, 300)
-        # self.resize(400, 200)
-        self.setGeometry(300, 400, 400, 200)
+        self.resize(400, 200)
+        # self.setGeometry(300, 400, 400, 200)
+        self.moveCenter()
 
         exitAction = QAction(QIcon('exit.png'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q')
@@ -42,6 +43,12 @@ class MyApp(QMainWindow):
         self.statusBar().showMessage('Ready')
 
         self.show()
+
+    def moveCenter(self):
+        fg = self.frameGeometry()
+        cp = QDesktopWidget().availableGeometry().center()
+        fg.moveCenter(cp)
+        self.move(fg.topLeft())
 
 
 if __name__ == "__main__":
