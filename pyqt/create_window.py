@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QDesktopWidget, QPushButton, QToolTip, QAction, qApp
-from PyQt5.QtCore import QCoreApplication
+from PyQt5.QtCore import QCoreApplication, QDateTime
 from PyQt5.QtGui import QIcon, QFont
 
 
@@ -8,6 +8,7 @@ class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.datetime = QDateTime.currentDateTime()
         self.initUI()
 
     def initUI(self):
@@ -41,6 +42,7 @@ class MyApp(QMainWindow):
         btn.clicked.connect(QCoreApplication.instance().quit)
 
         self.statusBar().showMessage('Ready')
+        self.statusBar().showMessage(self.datetime.toString('hh:mm:ss  yyyy.mm.dd ddd'))
 
         self.show()
 
