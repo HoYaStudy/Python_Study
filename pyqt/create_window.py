@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QDesktopWidget, QPushButton, QToolTip, QAction, qApp
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDesktopWidget, QPushButton, QToolTip, QAction, qApp
 from PyQt5.QtCore import QCoreApplication, QDateTime
 from PyQt5.QtGui import QIcon, QFont
 
@@ -12,7 +12,7 @@ class MyApp(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle("My First Application")
+        self.setWindowTitle("PyQt5 Windows")
         self.setWindowIcon(QIcon('terminal.png'))
         # self.move(300, 300)
         self.resize(400, 200)
@@ -42,7 +42,7 @@ class MyApp(QMainWindow):
         btn.clicked.connect(QCoreApplication.instance().quit)
 
         self.statusBar().showMessage('Ready')
-        self.statusBar().showMessage(self.datetime.toString('hh:mm:ss  yyyy.mm.dd ddd'))
+        self.statusBar().showMessage(self.datetime.toString('hh:mm:ss  yyyy.MM.dd ddd'))
 
         self.show()
 

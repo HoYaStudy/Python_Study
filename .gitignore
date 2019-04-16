@@ -102,3 +102,7 @@ ENV/
 
 # vscode
 .history/
+
+# PyCharm
+.idea/
+
