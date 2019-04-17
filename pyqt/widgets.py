@@ -12,6 +12,7 @@ class MyApp(QWidget):
         self.initUI()
 
     def initUI(self):
+        # QLabel
         label1 = QLabel('Label1', self)
         label1.setAlignment(Qt.AlignCenter)
         font1 = label1.font()
@@ -31,6 +32,7 @@ class MyApp(QWidget):
         font3.setPointSize(8)
         label3.setFont(font3)
 
+        # QCheckBox
         checkbox1 = QCheckBox('CheckBox1', self)
         checkbox1.toggle()
         checkbox1.stateChanged.connect(self.changeTitle)
@@ -41,6 +43,7 @@ class MyApp(QWidget):
         checkbox3 = QCheckBox(self)
         checkbox3.setText('CheckBox3');
 
+        # QPushButton
         btn1 = QPushButton('&Button1', self)
         btn1.setCheckable(True)
         btn1.toggle()
@@ -51,12 +54,14 @@ class MyApp(QWidget):
         btn3 = QPushButton('&Button3', self)
         btn3.setEnabled(False)
 
+        # QRadioButton
         rbtn1 = QRadioButton('RadioButton1', self)
         rbtn1.setChecked(True)
 
         rbtn2 = QRadioButton(self)
         rbtn2.setText('RadioButton2')
 
+        # QComboBox
         cb = QComboBox(self)
         cb.addItem('Combo1')
         cb.addItem('Combo2')
@@ -66,23 +71,26 @@ class MyApp(QWidget):
 
         self.label4 = QLabel('Label4', self)
 
+        # QLineEdit
         le = QLineEdit(self)
         le.textChanged[str].connect(self.onChanged)
 
         self.label5 = QLabel('Label5', self)
 
-        self.btn4 = QPushButton('Start', self)
-        self.btn4.clicked.connect(self.doAction)
-
+        # QProgressBar
         self.pbar1 = QProgressBar(self)
 
         pbar2 = QProgressBar(self)
         pbar2.setMaximum(0)
         pbar2.setMinimum(0)
 
+        self.btn4 = QPushButton('Start', self)
+        self.btn4.clicked.connect(self.doAction)
+
         self.timer = QBasicTimer()
         self.step = 0
 
+        # QSlider & QDial
         self.slider = QSlider(Qt.Horizontal, self)
         self.slider.setRange(0, 50)
         self.slider.setSingleStep(2)
@@ -96,6 +104,7 @@ class MyApp(QWidget):
         btn5 = QPushButton('Default', self)
         btn5.clicked.connect(self.button_clicked)
 
+        # QSplitter (QFrame)
         top = QFrame()
         top.setFrameShape(QFrame.Box)
 
@@ -118,6 +127,7 @@ class MyApp(QWidget):
         splitter2.addWidget(splitter1)
         splitter2.addWidget(bottom)
 
+        # Layout
         grid = QGridLayout()
         self.setLayout(grid)
 

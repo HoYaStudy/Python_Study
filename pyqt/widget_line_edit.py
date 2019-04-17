@@ -1,8 +1,7 @@
 import sys
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget, QGridLayout, QGroupBox
-from PyQt5.QtWidgets import QLabel, QCheckBox, QPushButton, QRadioButton, QComboBox, QLineEdit
-from PyQt5.QtWidgets import QProgressBar, QSlider, QDial, QFrame, QSplitter
-from PyQt5.QtCore import Qt, QBasicTimer
+from PyQt5.QtWidgets import QLineEdit, QPushButton
 from PyQt5.QtGui import QIntValidator, QDoubleValidator
 
 
