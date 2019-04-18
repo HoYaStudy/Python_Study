@@ -136,7 +136,7 @@ class MyApp(QWidget):
         self.layout.addWidget(btn, 3, 0)
         self.setLayout(self.layout)
 
-        self.setWindowTitle('Widget: Line Edit')
+        self.setWindowTitle('QLineEdit')
         self.show()
 
     def clearText(self):
