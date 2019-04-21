@@ -6,22 +6,22 @@
 
 ### Create
 
-'''sh
+```sh
 $ python3 -m venv <dir_name>
-'''
+```
 
 ### Activate
 
-'''sh
+```sh
 # on MAC or Linux
 $ source ./<dir_name>/bin/activate
 
 # on Windows
 $ .\<dir_name>\Scripts\activate
-'''
+```
 
 ### Deactivate
 
-'''sh
+```sh
 $ deactivate
-'''
+```

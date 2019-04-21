@@ -2,12 +2,12 @@
 
 ## Installation
 
-''sh
+```sh
 > $ python3 -m pip install jupyter
-'''
+```
 
 ## Run
 
-'''sh
+```sh
 > $ jupyter notebook
-'''
+```
