@@ -1,3 +1,6 @@
 pylint
 pyqt5
 pyinstaller
+pywin32
+pyautogui
+
