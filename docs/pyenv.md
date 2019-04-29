@@ -18,7 +18,8 @@ $ pip3 install pyenv-win --target $HOME/.pyenv
 시스템 환경 변수에서 `PATH` 변수에 다음의 내용을 추가한다.
 
 * ENVIRONMENT PATH :: My Computer -> properties -> Advanced system settings -> Advanced -> Environment Variables -> PATH
-	+ %USERPROFILE%\.pyenv\pyenv-win\bin;%USERPROFILE%\.pyenv\pyenv-win\shims;
+	+ %USERPROFILE%\\.pyenv\pyenv-win\bin
+	+ %USERPROFILE%\\.pyenv\pyenv-win\shims;
 
 ## Usage
 
@@ -31,7 +32,7 @@ $ pyenv install -l
 ### Install specific version
 
 ```sh
-$ pyenv install \<version>
+$ pyenv install <version>
 ```
 
 ### Show installed list
@@ -40,9 +41,24 @@ $ pyenv install \<version>
 $ pyenv versions
 ```
 
-### 특정 folder에서만 특정 version을 사용
+### Show current version
 
 ```sh
-$ pyenv local \<version>
+$ pyenv version
+```
+
+### 특정 folder에서만 특정 version을 사용
+
+#### on MAC
+
+```sh
+$ pyenv local <version>
 $ eval "$(pyenv init -)"
+```
+
+#### on Windows
+
+```sh
+$ pyenv local <version>
+$ pyenv rehash
 ```
