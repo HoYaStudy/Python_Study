@@ -4,16 +4,17 @@
 	"python.formatting.autopep8Args": [
 		"--max-line-length", "120"
 	],
+	"python.formatting.provider": "black",
 	"python.linting.enabled": true,
 	"python.linting.pep8Args": [
 		"--ignore=E303"
 	],
-	"python.linting.pep8Enabled": true,
-	"python.linting.pylintEnabled": false,
-	"python.pythonPath": "C:\\Python37\\python.exe",
-	"python.unitTest.nosetestsEnabled": false,
-	"python.unitTest.pyTestEnabled": false,
-	"python.unitTest.unittestEnabled": true,
+	"python.linting.pep8Enabled": false,
+	"python.linting.pylintEnabled": true,
+	"python.pythonPath": "C:\\Users\\hoya1\\hWorkspace\\Python_Playground\\inflearn\\.venv\\Scripts\\python.exe",
+	"python.testing.nosetestsEnabled": false,
+	"python.testing.pyTestEnabled": false,
+	"python.testing.unittestEnabled": true,
 	"python.venvFolders": [
 		"venv"
 	],
