@@ -69,3 +69,50 @@ import numpy as np
 
 # df3 = pd.DataFrame(np.random.randn(100, 4), columns=["One", "Two", "Three", "Four"])
 # df3.to_csv("./pandas/result.csv", index=False, header=False)
+
+# df4 = pd.read_excel("./pandas/excel1.xlsx")
+# print(df4)
+
+# df4 = pd.read_excel("./pandas/excel1.xlsx", sheet_name=0)
+# print(df4)
+# print(df4.head())
+# print(df4.tail())
+
+# df4 = pd.read_excel("./pandas/excel1.xlsx", skiprows=[0], skip_footer=10)
+# print(df4)
+
+# df4 = pd.read_excel("./pandas/excel1.xlsx", header=1)
+# print(df4)
+# print(list(df4))
+# print(list(df4.columns.values))
+
+# df4 = pd.read_excel(
+#     "./pandas/excel1.xlsx", skiprows=[0], header=None, names=["State", 2017, 2018, 2019]
+# )
+# print(df4)
+
+# df4 = pd.read_excel(
+#     "./pandas/excel1.xlsx",
+#     header=0,
+#     na_values="...",
+#     converters={"2003": lambda w: w if w > 60000 else None},
+# )
+# print(df4)
+# print(pd.isnull(df4))
+
+# df4 = pd.read_excel("./pandas/excel1.xlsx", header=0)
+# print(df4.rename(index=lambda x: x + 1))
+# print(df4.rename(index=lambda x: x + 1).index)
+
+# df4 = pd.read_excel("./pandas/excel1.xlsx", header=0)
+# df4["State"] = df4["State"].str.replace(" ", "-")
+# df4["Avg"] = df4[["2003", "2004", "2005"]].mean(axis=1).round(2)  # axis=1 => Row
+# df4["Sum"] = df4[["2003", "2004", "2005"]].sum(axis=1).round(2)  # axis=1 => Row
+# print(df4)
+# print(df4[["2003", "2004", "2005"]].max(axis=0))  # axis=0 => Column
+# print(df4[["2003", "2004", "2005"]].min(axis=0))  # axis=0 => Column
+# print(df4.describe())
+# df4.to_excel("./pandas/result1.xlsx", index=None)
+
+# df5 = pd.DataFrame(np.random.randn(100, 4), columns=["One", "Two", "Three", "Four"])
+# df5.to_csv("./pandas/result2.xlsx", index=False)
