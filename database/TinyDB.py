@@ -3,7 +3,7 @@ from tinydb import TinyDB, Query, where
 from tinydb.storages import MemoryStorage
 
 # Create DB (File)
-db = TinyDB("./database/tinydb.db", default_table="users")
+db = TinyDB("./tinydb.db", default_table="users")
 
 # Create DB (Memory)
 # db = TinyDB(storage=MemoryStorage, default_table="users")
@@ -25,11 +25,11 @@ tests.insert_multiple(
 )
 
 # Insert Json Data to Table
-with open("./database/users.json", "r") as f:
+with open("./users.json", "r") as f:
     r = json.loads(f.read())
     for u in r:
         users.insert(u)
-with open("./database/todos.json", "r") as f:
+with open("./todos.json", "r") as f:
     r = json.loads(f.read())
     for t in r:
         todos.insert(t)
