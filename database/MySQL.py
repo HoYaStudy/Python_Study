@@ -98,6 +98,10 @@ try:
 
         c.execute('DELETE FFROM users WHERE id=%s', (1, ))
         c.execute('DELETE FFROM users WHERE id='%s'' % (2, ))
+
+        c.execute('SELECT * FROM users ORDER BY id DESC')
+        for row in c.fetchall():
+            print('check 2 >', row)
     conn.commit()
 finally:
     conn.close()
