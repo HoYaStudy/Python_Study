@@ -4,4 +4,8 @@
 
 ### Download
 
-> https://sqlitebrowser.org/dl/
+> https://sqlitebrowser.org/dl
+
+## MySQL
+
+> https://www.mysql.com/downloads
