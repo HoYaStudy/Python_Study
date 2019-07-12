@@ -1,14 +1,17 @@
 import sys
 import datetime
 import re
+# from PyQt5 import uic
 from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
-from PyQt5.QtCore import pyqtSlot, pyqtSignal, QUrl
-# from PyQt5 import uic
+from PyQt5.QtCore import pyqtSlot, pyqtSignal, QUrl, QThread
+from PyQt5.QtMultimedia import QSound
 import pytube
 
 from lib.YouViewerLayout import Ui_MainWindow
 from lib.AuthDialog import AuthDialog
+from lib.IntroWorker import IntroWorker
+
 
 # Form = uic.loadUiType('./ui/you_viewer_v1.0.ui')[0]
 
@@ -23,9 +26,12 @@ class Main(QMainWindow, Ui_MainWindow):
         self.youtube = None
         self.youtube_fsize = 0
 
+        QSound.play('./resource/intro.wav')
+
         self.setupUi(self)
         self.initAuth()
         self.initSignal()
+        self.initIntroThread()
 
     def initAuth(self):
         self.previewBtn.setEnabled(False)
@@ -112,6 +118,18 @@ class Main(QMainWindow, Ui_MainWindow):
             temp_list.append(str(q.abr or ''))
             str_list = [x for x in temp_list if x != '']
             self.qualityCB.addItem(', '.join(str_list))
+
+    def initIntroThread(self):
+        self.introObj = IntroWorker()
+        self.introThread = QThread()
+        self.introObj.moveToThread(self.introThread)
+        self.introObj.startMsg.connect(self.showIntroInfo)
+        self.introThread.started.connect(self.introObj.playBGM)
+        self.introThread.start()
+
+    def showIntroInfo(self, username, filename):
+        self.logPTE.appendPlainText('Program started by : ' + username)
+        self.logPTE.appendPlainText('Playing intro is : ' + filename)
 
     @pyqtSlot()
     def downloadYoutube(self):
