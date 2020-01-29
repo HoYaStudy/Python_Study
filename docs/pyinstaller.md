@@ -78,6 +78,10 @@ $ pyinstaller --windowed --onefile <file.py>
   + .ico : Apply that icon to a Windows executable
   + .icns : Apply the icon to the .app bundle on Mac OS X
 
+### Windows specific options
+
+* `--uac-admin` : Using this option creates a Manifest which will request elevation upon application restart
+
 ## References
 
 * [PyInstaller](https://pyinstaller.readthedocs.io/en/stable/usage.html)
