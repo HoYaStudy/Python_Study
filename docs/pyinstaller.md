@@ -38,6 +38,14 @@ $ pyinstaller --windowed --onefile <file.py>
 
 만약, image file이 추가되어 있다면 생성된 `<file.exe>` 실행 file이 있는 folder에 같이 넣어준다.
 
+### _MEIPASS
+
+`PyInstaller`는 내부적으로 `_MEIPASS`라는 folder를 만들어 관리를 한다.
+
+Windows의 경우 `C:\Users\<UserID>\AppData\Local\Temp\` 경로 아래에 _MEI라는 이름으로 시작하는 folder를 만들어 관리를 한다.
+
+`sys` module의 `sys._MEIPASS`를 사용하여 접근할 수 있다.
+
 ## Options
 
 ### General Options
