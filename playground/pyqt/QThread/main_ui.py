@@ -17,7 +17,6 @@ class MainUI(QMainWindow):
 
         self.init_ui()
 
-
     def init_ui(self):
         self.worker.changed_value.connect(self.prog_bar.setValue)
         self.btn.clicked.connect(self.click_button)
