@@ -1,5 +1,20 @@
 # QSettings
 
+The QSettings class provides persistent platform-independent application settings.
+
+## Basic Usage
+
+```python
+settings = QSettings("Organization", "Application")
+
+# Save
+settings.setValue("key", value)
+
+# Load
+if settings.contains("key"):
+    value = settings.value("key"))
+```
+
 ## Group
 
 Grouping을 사용하여 설정들을 묶어서 관리할 수 있다.
@@ -20,9 +35,26 @@ value = settings.value("key")
 settings.endGroup()
 ```
 
-### `beginWriteArray()`
+### `beginWriteArray()` and `beginReadArray()`
 
-### `beginReadArray()`
+```python
+settings = QSettings("Organization", "Application")
+
+# Save
+settings.beginWriteArray("Array")
+for i in range(size):
+    settings.setArrayIndex(i)
+    settings.setValue("key", value[i])
+settings.endArray()
+
+# Load
+if settings.contains("Array/size"):
+size = settings.beginReadArray("Array")
+for i in range(size):
+    settings.setArrayIndex(i)
+    value[i] = settings.value("key"))
+settings.endArray()
+```
 
 ## Saved Location
 
