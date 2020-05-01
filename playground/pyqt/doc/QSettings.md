@@ -1,6 +1,6 @@
 # QSettings
 
-The QSettings class provides persistent platform-independent application settings.
+The `QSettings` class provides persistent platform-independent application settings.
 
 ## Basic Usage
 
