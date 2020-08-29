@@ -6,8 +6,6 @@ HoYa's Python Playground.
 
 ## Environment Configuration
 
-* [pyenv](docs/pyenv.md)
-* [venv](docs/venv.md)
-* [pip](docs/pip.md)
-* [jupyter](docs/jupyter.md)
-* [pyqt](docs/pyqt.md)
+* [pip](doc/pip.md)
+* [jupyter](doc/jupyter.md)
+* [pyqt](doc/pyqt.md)
