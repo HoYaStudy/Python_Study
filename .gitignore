@@ -109,3 +109,6 @@ ENV/
 
 # Executables
 **/*.exe
+
+# Temporary Output
+**/output/
