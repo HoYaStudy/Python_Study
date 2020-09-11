@@ -2,10 +2,8 @@
 
 ![img](https://travis-ci.org/llHoYall/Python_Playground.svg?branch=master)
 
-HoYa's Python Playground.
+This repository is for HoYa's Python Study.
 
-## Environment Configuration
+## Reference
 
-* [pip](doc/pip.md)
-* [jupyter](doc/jupyter.md)
-* [pyqt](doc/pyqt.md)
+[HoYa's Dev Blog](https://hdevstudy.tistory.com/category/Python)
