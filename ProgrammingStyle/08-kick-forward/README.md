@@ -1,4 +1,4 @@
-# Style #9
+# Style #8
 
 Variation of the pipeline style, with the following additional constraints:
 

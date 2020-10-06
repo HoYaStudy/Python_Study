@@ -1,4 +1,4 @@
-# Style #8
+# Style #7
 
 ## Constraints:
 
