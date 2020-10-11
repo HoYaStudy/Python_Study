@@ -2,28 +2,21 @@ import requests
 from bs4 import BeautifulSoup
 
 
-URL = f"https://stackoverflow.com/jobs?q=python"
-
-
-def get_last_page():
-    result = requests.get(URL)
+def get_last_page(url, job):
+    result = requests.get(url)
     soup = BeautifulSoup(result.text, "html.parser")
     pages = soup.find("div", {"class": "s-pagination"}).find_all("a")
-    last_page = pages[-2].get_text().strip()
+    last_page = pages[-2].get_text(strip=True)
     return int(last_page)
 
 
 def extract_job(html):
-    title = html.find("div", {"class": "fl1"}).find("a")["title"]
+    title = html.find("h2").find("a")["title"]
 
-    company = html.find("div", {"class": "fl1"}).find("h3").find("span")
+    company = html.find("h3").find("span")
     company = " ".join(list(company.stripped_strings))
 
-    location = (
-        html.find("div", {"class": "fl1"})
-        .find("h3")
-        .find_all("span", recursive=False)[-1]
-    ).string.strip()
+    location = (html.find("h3").find_all("span", recursive=False)[-1]).string.strip()
 
     job_id = html["data-jobid"]
 
@@ -35,11 +28,11 @@ def extract_job(html):
     }
 
 
-def get_jobs(last_page):
+def get_jobs(url, last_page):
     jobs = []
     for page in range(last_page):
         print(f"Scraping page from stackoverflow: {page + 1} / {last_page}")
-        result = requests.get(f"{URL}&pg={page + 1}")
+        result = requests.get(f"{url}&pg={page + 1}")
         soup = BeautifulSoup(result.text, "html.parser")
         divs = soup.find_all("div", {"class": "-job"})
         for div in divs:
@@ -47,7 +40,8 @@ def get_jobs(last_page):
     return jobs
 
 
-def get_stackoverflow_jobs():
-    last_page = get_last_page()
-    jobs = get_jobs(last_page)
+def get_stackoverflow_jobs(job):
+    url = f"https://stackoverflow.com/jobs?q={job}"
+    last_page = get_last_page(url, job)
+    jobs = get_jobs(url, last_page)
     return jobs
