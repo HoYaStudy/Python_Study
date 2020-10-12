@@ -1,0 +1,11 @@
+{
+  "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "files.exclude": {
+    "**/.venv": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "python.formatting.provider": "black"
+}
