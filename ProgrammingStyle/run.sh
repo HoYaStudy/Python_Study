@@ -47,6 +47,9 @@ for dir in $items; do
     else
       msg $exe PASSED in $(date_diff $test_start $test_end).
     fi
+  else
+    total=$((total + 1))
+    fail=$(($fail + 1))
   fi
 done
 suite_end=$(date +"%s")
