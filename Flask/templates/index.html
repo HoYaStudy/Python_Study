@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Home{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div>
+    This is contents.
+</div>
+<div>
+    Your name is {{name}}, and you are {{age}} years old.
+</div>
+<ul>
+    {% for item in fruits %}
+    <ul>{{item}}</ul>
+    {% endfor %}
+</ul>
+<div>
+    {% if is_male %}
+    You are a man.
+    {% else %}
+    You are a woman.
+    {% endif %}
+</div>
+{% endblock %}
