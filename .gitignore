@@ -111,3 +111,6 @@ ENV/
 
 # Temporary Output
 **/output/
+
+# MacOSX
+**/.DS_Store

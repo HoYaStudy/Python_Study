@@ -1,0 +1,6 @@
+pylint
+black
+pandas
+dash==1.17.0
+plotly
+jupyterlab
