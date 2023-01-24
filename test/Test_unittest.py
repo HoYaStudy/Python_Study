@@ -1,11 +1,3 @@
-###############################################################################
-# @brief    Python3 - unittest module.
-# @version  v1.0
-# @author   llChameleoNll <hoya128@gmail.com>
-# @note
-#   2017.08.23 - Created.
-###############################################################################
-
 # Import Module --------------------------------------------------------------#
 import unittest
 
@@ -84,7 +76,7 @@ class TestSuite(unittest.TestCase):
         """
         value is not None
         """
-        value = 'test'
+        value = "test"
         self.assertIsNotNone(value)
 
     def testIn(self):
@@ -171,16 +163,16 @@ class TestSuite(unittest.TestCase):
         """
         value2.search(value1)
         """
-        value1 = 'test'
-        value2 = 'e'
+        value1 = "test"
+        value2 = "e"
         self.assertRegex(value1, value2)
 
     def testNotRegex(self):
         """
         not value2.search(value1)
         """
-        value1 = 'test'
-        value2 = 'a'
+        value1 = "test"
+        value2 = "a"
         self.assertNotRegex(value1, value2)
 
     def testCountEqual(self):
@@ -188,19 +180,19 @@ class TestSuite(unittest.TestCase):
         value1 and value2 have the same elements in the same number,
           regardless of their order.
         """
-        value1 = 'abcde'
-        value2 = 'ecbda'
+        value1 = "abcde"
+        value2 = "ecbda"
         self.assertCountEqual(value1, value2)
 
     def testMultiLineEqual(self):
-        str1 = 'T\
+        str1 = "T\
                 E\
                 S\
-                T'
-        str2 = 'T\
+                T"
+        str2 = "T\
                 E\
                 S\
-                T'
+                T"
         self.assertMultiLineEqual(str1, str2)
 
     def testSuquenceEqual(self):
@@ -228,6 +220,22 @@ class TestSuite(unittest.TestCase):
         dict2 = {"key2": "value2", "key1": "value1"}
         self.assertDictEqual(dict1, dict2)
 
+    def testAdd(self):
+        params = ((3, {"a": 1, "b": 2}), (5, {"a": 2, "b": 3}), (7, {"a": 3, "b": 4}))
+        for expected, param in params:
+            with self.subTest(**param):
+                actual = param["a"] + param["b"]
+                self.assertEqual(actual, expected)
+
+    @unittest.skip("This test will be skipped")
+    def testSkip(self):
+        pass
+
+    @unittest.skipIf(2 > 1, "This test will be skipped")
+    def testSkipIf(self):
+        pass
+
+
 # Main -----------------------------------------------------------------------#
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
